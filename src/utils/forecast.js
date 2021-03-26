@@ -8,7 +8,10 @@ const forecast = (lat, lng, callback) => {
         } else if (body.error) {
             callback('Unable to find data', undefined)
         } else {
-            callback(undefined, 'Its ' + body.current.temperature + ' degree out there and it feels like '+body.current.feelslike + ' degree')
+            callback(
+                undefined,
+                'Its ' + body.current.temperature + ' degree out there and it feels like '+body.current.feelslike + ' degree out. There is wind speed of ' + body.current.wind_speed + 'miles per hour.'
+            )
         }
     })
 }
